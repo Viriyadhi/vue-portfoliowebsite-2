@@ -1,18 +1,22 @@
 <template>
   <v-app>
-    <carousels />
-    <div class="d-flex flex-row"></div>
+    <carousel id="home" />
+    <div id="about" class="d-flex flex-row justify-space-around">
+      <animal-card />
+    </div>
   </v-app>
 </template>
 
 <script>
-import Carousels from "../components/Carousels.vue";
+import AnimalCard from "../components/AnimalCard/animalCard.vue";
+import Carousel from "../components/Carousel.vue";
 
 export default {
   name: "Home",
 
   components: {
-    Carousels,
+    Carousel,
+    AnimalCard,
   },
 };
 </script>
