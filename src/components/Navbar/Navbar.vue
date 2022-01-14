@@ -4,8 +4,7 @@
       <v-spacer></v-spacer>
       <v-btn elevation="0" color="transparent" href="#home"> Home </v-btn>
       <v-btn elevation="0" color="transparent" href="#about"> About </v-btn>
-      <v-btn elevation="0" color="transparent"> Home </v-btn>
-      <v-btn elevation="0" color="transparent"> Home </v-btn>
+
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
