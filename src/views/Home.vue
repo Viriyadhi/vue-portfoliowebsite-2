@@ -1,15 +1,15 @@
 <template>
   <v-app>
     <carousel id="home" />
-    <div id="about" class="d-flex flex-row justify-space-around">
-      <animal-card />
-    </div>
+    <animal-card id="card" />
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import AnimalCard from "../components/AnimalCard/animalCard.vue";
 import Carousel from "../components/Carousel.vue";
+import Footer from "../components/Footer/Footer.vue";
 
 export default {
   name: "Home",
@@ -17,6 +17,7 @@ export default {
   components: {
     Carousel,
     AnimalCard,
+    Footer,
   },
 };
 </script>
