@@ -9,9 +9,13 @@
       >
       </v-img>
       <v-spacer></v-spacer>
-      <a elevation="0" href="#top"> Home </a>
-      <a elevation="0" href="#card"> About </a>
-      <a elevation="0" href="#card" id="last"> Contact </a>
+      <router-link :to="{ name: 'Home' }">
+        <a class="mr-8">Home</a>
+      </router-link>
+      <router-link :to="{ name: 'AnimalList' }">
+        <a class="mr-8">List</a>
+      </router-link>
+      <a class="mr-8" elevation="0" href="#card" id="last"> Contact </a>
 
       <v-btn icon class="mr-16">
         <v-icon>mdi-magnify</v-icon>
@@ -32,7 +36,8 @@ export default {
   }),
   methods: {
     onScroll(p) {
-      if (p.currentTarget.scrollY > 150) {
+      console.log(p.currentTarget.scrollY);
+      if (p.currentTarget.scrollY > 11) {
         this.appbarStyle.backgroundColor = `rgba(255,255,255,1)`;
         this.appbarStyle.marginTop = "-6px";
         this.appbarStyle.boxShadow =
@@ -48,7 +53,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 html {
   overflow: scroll;
   overflow-x: hidden;
@@ -59,10 +64,9 @@ html {
 a {
   text-decoration: none;
   color: black !important;
-  margin-right: 2rem;
 }
 
 #last {
-  margin-right: 6rem;
+  margin-right: 4rem !important;
 }
 </style>

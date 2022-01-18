@@ -2,14 +2,15 @@
   <v-app>
     <carousel id="home" />
     <animal-card id="card" />
-    <Footer />
+    <grid-view />
   </v-app>
 </template>
 
 <script>
 import AnimalCard from "../components/AnimalCard/animalCard.vue";
 import Carousel from "../components/Carousel.vue";
-import Footer from "../components/Footer/Footer.vue";
+
+import GridView from "../components/GridView/gridView.vue";
 
 export default {
   name: "Home",
@@ -17,7 +18,8 @@ export default {
   components: {
     Carousel,
     AnimalCard,
-    Footer,
+
+    GridView,
   },
 };
 </script>
