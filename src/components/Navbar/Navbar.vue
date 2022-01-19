@@ -29,7 +29,7 @@ export default {
   data: () => ({
     appbarStyle: {
       backgroundColor: `rgba(0,0,0,0)`,
-      transition: "background-color 800ms, margin-top 800ms ",
+      transition: "all 700ms ",
       marginTop: "0px",
       boxShadow: "none !important",
     },
@@ -37,6 +37,7 @@ export default {
   methods: {
     onScroll(p) {
       console.log(p.currentTarget.scrollY);
+      console.log(this.appbarStyle);
       if (p.currentTarget.scrollY > 11) {
         this.appbarStyle.backgroundColor = `rgba(255,255,255,1)`;
         this.appbarStyle.marginTop = "-6px";
