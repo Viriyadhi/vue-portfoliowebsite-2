@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <carousel id="home" />
-    <animal-card id="card" />
+    <carousel />
+    <animal-card />
     <grid-view />
   </v-app>
 </template>
