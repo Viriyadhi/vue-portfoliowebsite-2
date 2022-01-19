@@ -1,53 +1,55 @@
 <template>
-  <main>
-    <div class="daerah-section d-flex justify-center align-center mb-6">
-      <h1>TITLE</h1>
-    </div>
+  <v-lazy v-model="isActive">
+    <div>
+      <div class="daerah-section d-flex justify-center align-center mb-6">
+        <h1>TITLE</h1>
+      </div>
 
-    <div class="photo-grid mb-8">
-      <div class="card card-tall">
-        <router-link :to="{ name: 'AnimalList' }">
-          <a class="">Ikan</a>
-        </router-link>
-      </div>
-      <div class="card-biasa">
-        <router-link :to="{ name: 'AnimalList' }">
-          <a class="">Burung</a>
-        </router-link>
-      </div>
-      <div class="card card-wide">
-        <router-link :to="{ name: 'AnimalList' }">
-          <a class="">Mamalia</a>
-        </router-link>
-      </div>
-      <div class="card card-tall">
-        <router-link :to="{ name: 'AnimalList' }">
-          <a class="">Amfibi</a>
-        </router-link>
-      </div>
-      <div class="card card-wide">
-        <router-link :to="{ name: 'AnimalList' }">
-          <a class="">Invertebrata</a>
-        </router-link>
-      </div>
-      <div class="card-biasa">
-        <router-link :to="{ name: 'AnimalList' }">
-          <a class="">Reptil</a>
-        </router-link>
-      </div>
+      <section class="photo-grid animated-grid mb-8">
+        <div class="card card-tall rounded">
+          <router-link :to="{ name: 'AnimalList' }">
+            <a class="">Ikan</a>
+          </router-link>
+        </div>
+        <div class="card card-biasa rounded">
+          <router-link :to="{ name: 'AnimalList' }">
+            <a class="">Burung</a>
+          </router-link>
+        </div>
+        <div class="card card-wide rounded">
+          <router-link :to="{ name: 'AnimalList' }">
+            <a class="">Mamalia</a>
+          </router-link>
+        </div>
+        <div class="card card-tall rounded">
+          <router-link :to="{ name: 'AnimalList' }">
+            <a class="">Amfibi</a>
+          </router-link>
+        </div>
+        <div class="card card-wide rounded">
+          <router-link :to="{ name: 'AnimalList' }">
+            <a class="">Invertebrata</a>
+          </router-link>
+        </div>
+        <div class="card card-biasa rounded">
+          <router-link :to="{ name: 'AnimalList' }">
+            <a class="">Reptil</a>
+          </router-link>
+        </div>
+      </section>
     </div>
-  </main>
+  </v-lazy>
 </template>
 
 <script>
-export default {};
+export default {
+  data: () => ({
+    isActive: false,
+  }),
+};
 </script>
 
 <style scoped>
-* {
-  padding: 0;
-  margin: 0;
-}
 .card {
   display: flex;
   flex-direction: column;
@@ -60,7 +62,7 @@ export default {};
     rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   height: 100%;
   width: 100%;
-  border-radius: 4px;
+
   transition: all 500ms;
   overflow: hidden;
   background-size: cover;
@@ -68,41 +70,16 @@ export default {};
   background-repeat: no-repeat;
 }
 
-.card-biasa {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #353535;
-  font-size: 2rem;
-  color: #fff;
-  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
-    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-  height: 100%;
-  width: 100%;
-  border-radius: 4px;
-  transition: all 500ms;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.card:hover,
-.card-biasa:hover {
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
-    rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+.card:hover {
   transform: translateY(-3px) scale(1.1);
 }
-
-.daerah-section {
-  display: flex;
-  margin-top: 3.5rem !important;
-  justify-content: center;
-}
-
-.daerah-section h1 {
-  font-size: 42px;
+.animated-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "a  b  c  c  d"
+    "a  f  f  e  d";
+  --stagger-delay: 100ms;
 }
 
 .photo-grid {
@@ -116,6 +93,38 @@ export default {};
   grid-auto-rows: 240px;
 }
 
+.daerah-section {
+  display: flex;
+  margin-top: 3.5rem !important;
+  justify-content: center;
+}
+
+.daerah-section h1 {
+  font-size: 42px;
+}
+.card {
+  animation: cardEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: hue-rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+a {
+  color: white !important;
+  text-decoration: none !important;
+  margin: 0;
+}
 .card-tall a {
   padding: 14rem 7.3rem !important;
 }
@@ -128,16 +137,33 @@ export default {};
   padding: 5.9rem 7.3rem !important;
 }
 
-a {
-  color: white !important;
-  text-decoration: none !important;
-  margin: 0;
+.card:nth-child(1) {
+  grid-area: a;
+  animation-delay: calc(1 * var(--stagger-delay));
 }
-
+.card:nth-child(2) {
+  grid-area: b;
+  animation-delay: calc(3 * var(--stagger-delay));
+}
+.card:nth-child(3) {
+  grid-area: c;
+  animation-delay: calc(5 * var(--stagger-delay));
+}
+.card:nth-child(4) {
+  grid-area: d;
+  animation-delay: calc(7 * var(--stagger-delay));
+}
+.card:nth-child(5) {
+  grid-area: e;
+  animation-delay: calc(9 * var(--stagger-delay));
+}
+.card:last-child {
+  grid-area: f;
+  animation-delay: calc(11 * var(--stagger-delay));
+}
 .card-tall {
   grid-row: span 2 / auto;
 }
-
 .card-wide {
   grid-column: span 2 / auto;
 }
