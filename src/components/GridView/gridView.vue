@@ -58,12 +58,9 @@ export default {
   background: #353535;
   font-size: 2rem;
   color: #fff;
-  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
-    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   height: 100%;
   width: 100%;
-
-  transition: all 500ms;
+  transition: all 300ms;
   overflow: hidden;
   background-size: cover;
   background-position: center;
