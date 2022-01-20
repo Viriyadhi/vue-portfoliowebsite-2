@@ -12,48 +12,12 @@
         <h1>MAMALS</h1>
       </div>
       <div class="d-flex justify-space-around py-2 my-2 px-16 mx-16">
-        <v-card :loading="loading" class="rounded-lg" max-width="374">
-          <v-img
-            height="200"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-          ></v-img>
-
-          <v-card-title>Cafe Badilico</v-card-title>
-
-          <v-card-text>
-            <div class="mb-4 text-subtitle-1">Italian, Cafe</div>
-
-            <div>
-              Small plates, salads & sandwiches - an intimate setting with 12
-              indoor seats plus patio seating.
-            </div>
-          </v-card-text>
-
-          <v-divider class="mx-2"></v-divider>
-          <v-card-title>Test Title</v-card-title>
-        </v-card>
-
-        <v-card :loading="loading" class="rounded-lg" max-width="374">
-          <v-img
-            height="200"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-          ></v-img>
-
-          <v-card-title>Cafe Badilico</v-card-title>
-
-          <v-card-text>
-            <div class="mb-4 text-subtitle-1">Italian, Cafe</div>
-
-            <div>
-              Small plates, salads & sandwiches - an intimate setting with 12
-              indoor seats plus patio seating.
-            </div>
-          </v-card-text>
-
-          <v-divider class="mx-2"></v-divider>
-          <v-card-title>Test Title</v-card-title>
-        </v-card>
-        <v-card :loading="loading" class="rounded-lg" max-width="374">
+        <v-card
+          class="rounded-lg"
+          max-width="374"
+          v-for="(item, i) in items"
+          :key="i"
+        >
           <v-img
             height="200"
             src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
@@ -81,7 +45,6 @@
 <script>
 export default {
   data: () => ({
-    loading: false,
     selection: 1,
 
     items: [
@@ -97,13 +60,7 @@ export default {
     ],
   }),
 
-  methods: {
-    reserve() {
-      this.loading = true;
-
-      setTimeout(() => (this.loading = false), 2000);
-    },
-  },
+  methods: {},
 };
 </script>
 
