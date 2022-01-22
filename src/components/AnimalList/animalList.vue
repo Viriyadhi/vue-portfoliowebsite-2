@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="background">
     <v-lazy v-model="isActive">
       <div class="container">
         <v-row>
@@ -12,7 +12,10 @@
           >
             <v-hover v-slot="{ hover }">
               <router-link :to="{ name: 'DetailAnimal' }">
-                <v-card class="elevation-0 rounded-lg">
+                <v-card
+                  class="elevation-0 rounded-lg"
+                  box-shadow="0 10px 29px 0 rgb(68 88 144 / 10%"
+                >
                   <v-img class="rounded-lg" :src="item.src" height="350px">
                     <v-expand-transition>
                       <div
@@ -87,11 +90,15 @@ export default {
 </script>
 
 <style scoped>
+.background {
+  background: #f5f8fd;
+}
 .expanded {
   margin: auto !important;
 }
 .container {
   width: 70% !important;
+  background: white;
 }
 h1 {
   color: black;

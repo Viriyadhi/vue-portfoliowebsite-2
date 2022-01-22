@@ -1,44 +1,46 @@
 <template>
-  <v-lazy v-model="isActive">
-    <div>
-      <div class="daerah-section d-flex justify-center align-center mb-6">
-        <h1>TITLE</h1>
-      </div>
+  <div class="container-all">
+    <v-lazy v-model="isActive">
+      <div>
+        <div class="daerah-section d-flex justify-center align-center mb-6">
+          <h1>TITLE</h1>
+        </div>
 
-      <section class="photo-grid animated-grid mb-8">
-        <div class="card card-tall rounded">
-          <router-link :to="{ name: 'AnimalList' }">
-            <a class="">Ikan</a>
-          </router-link>
-        </div>
-        <div class="card card-biasa rounded">
-          <router-link :to="{ name: 'AnimalList' }">
-            <a class="">Burung</a>
-          </router-link>
-        </div>
-        <div class="card card-wide rounded">
-          <router-link :to="{ name: 'AnimalList' }">
-            <a class="">Mamalia</a>
-          </router-link>
-        </div>
-        <div class="card card-tall rounded">
-          <router-link :to="{ name: 'AnimalList' }">
-            <a class="">Amfibi</a>
-          </router-link>
-        </div>
-        <div class="card card-wide rounded">
-          <router-link :to="{ name: 'AnimalList' }">
-            <a class="">Invertebrata</a>
-          </router-link>
-        </div>
-        <div class="card card-biasa rounded">
-          <router-link :to="{ name: 'AnimalList' }">
-            <a class="">Reptil</a>
-          </router-link>
-        </div>
-      </section>
-    </div>
-  </v-lazy>
+        <section class="container photo-grid animated-grid mb-8">
+          <div class="card card-tall rounded">
+            <router-link :to="{ name: 'AnimalList' }">
+              <a class="">Ikan</a>
+            </router-link>
+          </div>
+          <div class="card card-biasa rounded">
+            <router-link :to="{ name: 'AnimalList' }">
+              <a class="">Burung</a>
+            </router-link>
+          </div>
+          <div class="card card-wide rounded">
+            <router-link :to="{ name: 'AnimalList' }">
+              <a class="">Mamalia</a>
+            </router-link>
+          </div>
+          <div class="card card-tall rounded">
+            <router-link :to="{ name: 'AnimalList' }">
+              <a class="">Amfibi</a>
+            </router-link>
+          </div>
+          <div class="card card-wide rounded">
+            <router-link :to="{ name: 'AnimalList' }">
+              <a class="">Invertebrata</a>
+            </router-link>
+          </div>
+          <div class="card card-biasa rounded">
+            <router-link :to="{ name: 'AnimalList' }">
+              <a class="">Reptil</a>
+            </router-link>
+          </div>
+        </section>
+      </div>
+    </v-lazy>
+  </div>
 </template>
 
 <script>
@@ -50,6 +52,9 @@ export default {
 </script>
 
 <style scoped>
+.container-all {
+  background: #f5f8fd;
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -65,6 +70,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: 0 10px 29px 0 rgb(68 88 144 / 10%) !important;
 }
 
 .card:hover {
