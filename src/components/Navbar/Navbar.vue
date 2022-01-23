@@ -9,17 +9,19 @@
       >
       </v-img>
       <v-spacer></v-spacer>
-      <router-link :to="{ name: 'Home' }">
-        <a class="mr-8">Home</a>
-      </router-link>
-      <router-link :to="{ name: 'AnimalList' }">
-        <a class="mr-8">List</a>
-      </router-link>
-      <a class="mr-8" elevation="0" href="#card" id="last"> Contact </a>
+      <div class="d-flex align-center justify-center">
+        <router-link :to="{ name: 'Home' }">
+          <a class="mr-8">Home</a>
+        </router-link>
+        <router-link :to="{ name: 'AnimalList' }">
+          <a class="mr-8">List</a>
+        </router-link>
+        <a class="mr-8" elevation="0" href="#card" id="last"> Contact </a>
 
-      <v-btn icon class="mr-16">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+        <v-btn icon class="mr-16">
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+      </div>
     </v-app-bar>
     <router-view v-scroll="onScroll" ref="router" />
   </v-card>
@@ -40,7 +42,7 @@ export default {
       console.log(this.appbarStyle);
       if (p.currentTarget.scrollY > 11) {
         this.appbarStyle.backgroundColor = `rgba(255,255,255,1)`;
-        this.appbarStyle.marginTop = "-6px";
+        this.appbarStyle.marginTop = "-5px";
         this.appbarStyle.boxShadow =
           "0px 0px 30px rgba(127, 137, 161,1) !important";
       } else {
