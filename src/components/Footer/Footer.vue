@@ -1,7 +1,10 @@
 <template>
-  <v-footer color="white lighten-1">
+  <v-footer>
     <v-row justify="center" no-gutters>
-      <v-col class="white lighten-2 py-6 text-center black--text" cols="12">
+      <v-col
+        class="container white lighten-2 py-6 text-center black--text"
+        cols="12"
+      >
         © {{ new Date().getFullYear() }} Copyright
         <strong>Viriyadhi</strong>
       </v-col>
@@ -19,5 +22,6 @@ export default {
 <style scoped>
 .container {
   width: 100% !important;
+  background: #f5f8fd !important;
 }
 </style>
