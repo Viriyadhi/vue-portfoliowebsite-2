@@ -1,42 +1,52 @@
 <template>
-  <div class="container-all">
+  <div>
     <v-lazy v-model="isActive">
       <div>
         <div class="daerah-section d-flex justify-center align-center mb-6">
           <h1>TITLE</h1>
         </div>
 
-        <section class="container photo-grid animated-grid mb-8">
-          <div class="card card-tall rounded">
-            <router-link :to="{ name: 'AnimalList' }">
-              <a class="">Ikan</a>
-            </router-link>
-          </div>
-          <div class="card card-biasa rounded">
-            <router-link :to="{ name: 'AnimalList' }">
-              <a class="">Burung</a>
-            </router-link>
-          </div>
-          <div class="card card-wide rounded">
-            <router-link :to="{ name: 'AnimalList' }">
-              <a class="">Mamalia</a>
-            </router-link>
-          </div>
-          <div class="card card-tall rounded">
-            <router-link :to="{ name: 'AnimalList' }">
-              <a class="">Amfibi</a>
-            </router-link>
-          </div>
-          <div class="card card-wide rounded">
-            <router-link :to="{ name: 'AnimalList' }">
-              <a class="">Invertebrata</a>
-            </router-link>
-          </div>
-          <div class="card card-biasa rounded">
-            <router-link :to="{ name: 'AnimalList' }">
-              <a class="">Reptil</a>
-            </router-link>
-          </div>
+        <section class="photo-grid animated-grid mb-8">
+          <router-link
+            class="card card-tall rounded"
+            :to="{ name: 'AnimalList' }"
+          >
+            <a class="">Ikan</a>
+          </router-link>
+
+          <router-link
+            class="card card-biasa rounded"
+            :to="{ name: 'AnimalList' }"
+          >
+            <a class="">Burung</a>
+          </router-link>
+
+          <router-link
+            class="card card-wide rounded"
+            :to="{ name: 'AnimalList' }"
+          >
+            <a class="">Mamalia</a>
+          </router-link>
+
+          <router-link
+            class="card card-tall rounded"
+            :to="{ name: 'AnimalList' }"
+          >
+            <a class="">Amfibi</a>
+          </router-link>
+          <router-link
+            class="card card-wide rounded"
+            :to="{ name: 'AnimalList' }"
+          >
+            <a class="">Reptil</a>
+          </router-link>
+
+          <router-link
+            class="card card-biasa rounded"
+            :to="{ name: 'AnimalList' }"
+          >
+            <a class="">Invertebrata</a>
+          </router-link>
         </section>
       </div>
     </v-lazy>
@@ -52,9 +62,6 @@ export default {
 </script>
 
 <style scoped>
-.container-all {
-  background: #f5f8fd;
-}
 .card {
   display: flex;
   flex-direction: column;
@@ -77,23 +84,19 @@ export default {
   transform: translateY(-3px) scale(1.1);
 }
 .animated-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-areas:
-    "a  b  c  c  d"
-    "a  f  f  e  d";
   --stagger-delay: 100ms;
 }
 
 .photo-grid {
   cursor: pointer;
   padding-top: 2.6rem;
-  width: 80%;
+  width: 76%;
   margin: auto;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-auto-rows: 240px;
+  flex-wrap: nowrap !important;
 }
 
 .daerah-section {
@@ -114,60 +117,42 @@ export default {
   from {
     opacity: 0;
     transform: scale(0.3);
-    filter: hue-rotate(180deg);
   }
   to {
     opacity: 1;
     transform: scale(1);
-    filter: hue-rotate(0deg);
   }
 }
 
 a {
   color: white !important;
   text-decoration: none !important;
-  margin: 0;
 }
-.card-tall a {
-  padding: 14rem 7.3rem !important;
-}
-
-.card-wide a {
-  padding: 5.8rem 15.5rem !important;
-}
-
-.card-biasa a {
-  padding: 5.9rem 7.3rem !important;
-}
-
 .card:nth-child(1) {
-  grid-area: a;
   animation-delay: calc(1 * var(--stagger-delay));
 }
 .card:nth-child(2) {
-  grid-area: b;
   animation-delay: calc(3 * var(--stagger-delay));
 }
 .card:nth-child(3) {
-  grid-area: c;
   animation-delay: calc(5 * var(--stagger-delay));
 }
 .card:nth-child(4) {
-  grid-area: d;
   animation-delay: calc(7 * var(--stagger-delay));
 }
 .card:nth-child(5) {
-  grid-area: e;
   animation-delay: calc(9 * var(--stagger-delay));
 }
-.card:last-child {
-  grid-area: f;
+.card:nth-child(6) {
   animation-delay: calc(11 * var(--stagger-delay));
 }
-.card-tall {
-  grid-row: span 2 / auto;
-}
-.card-wide {
-  grid-column: span 2 / auto;
+
+@media only screen and (min-width: 800px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
 }
 </style>

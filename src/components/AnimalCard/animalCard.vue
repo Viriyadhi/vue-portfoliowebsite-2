@@ -1,52 +1,46 @@
 <template>
-  <v-carousel
-    hide-delimiter-background
-    show-arrows-on-hover
-    indeterminate
-    interval="4000"
-    cycle
-    height="550"
-  >
-    <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
-      <div class="d-flex justify-center">
-        <h1>MAMALS</h1>
-      </div>
-      <div class="d-flex justify-space-around py-2 my-2 px-16 mx-16">
-        <v-card
-          class="rounded-lg"
-          max-width="374"
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-img
-            height="200"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-          ></v-img>
+  <div class="all-container">
+    <div class="d-flex justify-center pt-11 pb-8">
+      <h1>TITLE</h1>
+    </div>
+    <div class="card-container py-2 my-2 px-16 mx-16">
+      <v-card
+        v-for="(item, i) in items"
+        :key="i"
+        :src="item.src"
+        class="rounded-lg elevation-0 mb-6"
+        min-height="27rem"
+        min-width="18rem"
+        width="22rem"
+      >
+        <v-img
+          max-height="12rem"
+          min-height="6rem"
+          src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+        ></v-img>
 
-          <v-card-title>Cafe Badilico</v-card-title>
+        <v-card-title>Cafe Badilico</v-card-title>
 
-          <v-card-text>
-            <div class="mb-4 text-subtitle-1">Italian, Cafe</div>
+        <v-card-text>
+          <div class="mb-4 text-subtitle-1">Italian, Cafe</div>
 
-            <div>
-              Small plates, salads & sandwiches - an intimate setting with 12
-              indoor seats plus patio seating.
-            </div>
-          </v-card-text>
+          <div>
+            Small plates, salads & sandwiches - an intimate setting with 12
+            indoor seats plus patio seating.
+          </div>
+        </v-card-text>
 
-          <v-divider class="mx-2"></v-divider>
-          <v-card-title>Test Title</v-card-title>
-        </v-card>
-      </div>
-    </v-carousel-item>
-  </v-carousel>
+        <v-divider class="mx-2"></v-divider>
+        <v-card-title>Test Title</v-card-title>
+      </v-card>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   data: () => ({
     selection: 1,
-
     items: [
       {
         src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
@@ -64,4 +58,33 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.v-card {
+  cursor: pointer;
+  box-shadow: 0 10px 29px 0 rgb(68 88 144 / 30%) !important;
+}
+
+.all-container {
+  background: #f5f8fd;
+}
+
+.card-container {
+  display: flex !important;
+  justify-content: space-around !important;
+  flex-direction: row !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card-container {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .card-container {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+</style>
