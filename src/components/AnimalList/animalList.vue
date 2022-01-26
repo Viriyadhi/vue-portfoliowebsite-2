@@ -8,15 +8,24 @@
             :key="i"
             :src="item.src"
             cols="12"
-            sm="4"
+            xs="12"
+            sm="6"
+            lg="4"
+            xl="3"
           >
             <v-hover v-slot="{ hover }">
               <router-link :to="{ name: 'DetailAnimal' }">
                 <v-card
                   class="elevation-0 rounded-lg"
-                  box-shadow="0 10px 29px 0 rgb(68 88 144 / 10%"
+                  box-shadow="0 10px 29px 0 rgb(68 88 144 / 10%)"
                 >
-                  <v-img class="rounded-lg" :src="item.src" height="350px">
+                  <v-img
+                    class="rounded-lg"
+                    :src="item.src"
+                    height="300px"
+                    min-height="180px"
+                    min-width="180px"
+                  >
                     <v-expand-transition>
                       <div
                         v-if="hover"
@@ -93,9 +102,7 @@ export default {
 .background {
   background: #f5f8fd;
 }
-.expanded {
-  margin: auto !important;
-}
+
 .container {
   width: 70% !important;
   background: white;
@@ -115,5 +122,11 @@ p {
   background-color: rgba(0, 0, 0, 0.25) !important;
   position: absolute;
   width: 100% !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 90% !important;
+  }
 }
 </style>
