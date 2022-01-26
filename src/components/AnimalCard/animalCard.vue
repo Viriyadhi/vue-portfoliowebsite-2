@@ -8,7 +8,7 @@
         v-for="(item, i) in items"
         :key="i"
         :src="item.src"
-        class="rounded-lg elevation-0 mb-6"
+        class="rounded-lg elevation-0 mb-16 mx-5"
         min-height="27rem"
         min-width="18rem"
         width="22rem"
@@ -61,11 +61,16 @@ export default {
 <style scoped>
 .v-card {
   cursor: pointer;
-  box-shadow: 0 10px 29px 0 rgb(68 88 144 / 30%) !important;
+  box-shadow: 0 10px 29px 0 rgb(68 88 144 / 20%) !important;
 }
 
 .all-container {
   background: #f5f8fd;
+}
+
+.all-container h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 .card-container {
@@ -74,13 +79,7 @@ export default {
   flex-direction: row !important;
 }
 
-@media only screen and (max-width: 1024px) {
-  .card-container {
-    justify-content: space-between;
-  }
-}
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 960px) {
   .card-container {
     flex-direction: column !important;
     justify-content: center !important;

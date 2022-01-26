@@ -63,6 +63,7 @@ export default {
 
 <style scoped>
 .card {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +89,6 @@ export default {
 }
 
 .photo-grid {
-  cursor: pointer;
   padding-top: 2.6rem;
   width: 76%;
   margin: auto;
@@ -96,7 +96,6 @@ export default {
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-auto-rows: 240px;
-  flex-wrap: nowrap !important;
 }
 
 .daerah-section {
@@ -107,16 +106,23 @@ export default {
 
 .daerah-section h1 {
   font-size: 42px;
+  font-weight: 400;
 }
 .card {
   animation: cardEntrance 700ms ease-out;
   animation-fill-mode: backwards;
 }
+.card-tall {
+  grid-row: span 2 / auto;
+}
+.card-wide {
+  grid-column: span 2 / auto;
+}
 
 @keyframes cardEntrance {
   from {
     opacity: 0;
-    transform: scale(0.3);
+    transform: scale(0.2);
   }
   to {
     opacity: 1;
@@ -147,12 +153,66 @@ a {
   animation-delay: calc(11 * var(--stagger-delay));
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 3042px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+  .card-wide {
+    grid-column: span 3 / auto;
+  }
+}
+
+@media only screen and (min-width: 2337px) {
+  .photo-grid {
+    width: 73%;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 5fr));
+    grid-auto-rows: 300px;
+  }
+}
+@media only screen and (max-width: 1664px) {
   .card-tall {
     grid-row: span 2 / auto;
   }
   .card-wide {
     grid-column: span 2 / auto;
+  }
+  .photo-grid {
+    width: 76%;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 180px;
+  }
+}
+
+@media only screen and (max-width: 1226px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+  .photo-grid {
+    width: 93%;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 180px;
+  }
+  .card {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1002px) {
+  .card-tall {
+    grid-row: span 1 / auto;
+  }
+  .card-wide {
+    grid-column: span 1 / auto;
+  }
+  .photo-grid {
+    width: 93%;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
   }
 }
 </style>
