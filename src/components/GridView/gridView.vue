@@ -1,54 +1,52 @@
 <template>
   <div>
     <v-lazy v-model="isActive">
-      <div>
-        <div class="daerah-section d-flex justify-center align-center mb-6">
-          <h1>TITLE</h1>
-        </div>
-
-        <section class="photo-grid animated-grid mb-8">
-          <router-link
-            class="card card-tall rounded"
-            :to="{ name: 'AnimalList' }"
-          >
-            <a class="">Ikan</a>
-          </router-link>
-
-          <router-link
-            class="card card-biasa rounded"
-            :to="{ name: 'AnimalList' }"
-          >
-            <a class="">Burung</a>
-          </router-link>
-
-          <router-link
-            class="card card-wide rounded"
-            :to="{ name: 'AnimalList' }"
-          >
-            <a class="">Mamalia</a>
-          </router-link>
-
-          <router-link
-            class="card card-tall rounded"
-            :to="{ name: 'AnimalList' }"
-          >
-            <a class="">Amfibi</a>
-          </router-link>
-          <router-link
-            class="card card-wide rounded"
-            :to="{ name: 'AnimalList' }"
-          >
-            <a class="">Reptil</a>
-          </router-link>
-
-          <router-link
-            class="card card-biasa rounded"
-            :to="{ name: 'AnimalList' }"
-          >
-            <a class="">Invertebrata</a>
-          </router-link>
-        </section>
+      <div class="daerah-section d-flex justify-center align-center mb-6">
+        <h1>TITLE</h1>
       </div>
+
+      <section class="photo-grid animated-grid mb-8">
+        <router-link
+          class="card card-tall rounded"
+          :to="{ name: 'AnimalList' }"
+        >
+          <a class="">Ikan</a>
+        </router-link>
+
+        <router-link
+          class="card card-biasa rounded"
+          :to="{ name: 'AnimalList' }"
+        >
+          <a class="">Burung</a>
+        </router-link>
+
+        <router-link
+          class="card card-wide rounded"
+          :to="{ name: 'AnimalList' }"
+        >
+          <a class="">Mamalia</a>
+        </router-link>
+
+        <router-link
+          class="card card-tall rounded"
+          :to="{ name: 'AnimalList' }"
+        >
+          <a class="">Amfibi</a>
+        </router-link>
+        <router-link
+          class="card card-wide rounded"
+          :to="{ name: 'AnimalList' }"
+        >
+          <a class="">Reptil</a>
+        </router-link>
+
+        <router-link
+          class="card card-biasa rounded"
+          :to="{ name: 'AnimalList' }"
+        >
+          <a class="">Invertebrata</a>
+        </router-link>
+      </section>
     </v-lazy>
   </div>
 </template>

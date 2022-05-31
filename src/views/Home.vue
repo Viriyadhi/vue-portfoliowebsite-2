@@ -9,7 +9,6 @@
 <script>
 import AnimalCard from "../components/AnimalCard/animalCard.vue";
 import Carousel from "../components/Carousel.vue";
-
 import GridView from "../components/GridView/gridView.vue";
 
 export default {
@@ -18,7 +17,6 @@ export default {
   components: {
     Carousel,
     AnimalCard,
-
     GridView,
   },
 };
